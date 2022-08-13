@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.1)
 project(matchmaker)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+add_compile_definitions(_USE_MATH_DEFINES)
 
 set(THIRD_PARTY_DIR ${CMAKE_SOURCE_DIR}/ext)
 include(PEDependencies)

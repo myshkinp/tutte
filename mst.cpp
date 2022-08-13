@@ -28,9 +28,9 @@ void mst(
 ){
     
     int nV = V.rows();
-    int parent[nV];
-    int key[nV];
-    bool mstSet[nV];  
+    int* parent = new int[nV];
+    int* key = new int[nV];
+    bool* mstSet = new bool[nV];
   
     // Initialize all keys as INFINITE 
     for (int i = 0; i < nV; i++) 
@@ -67,4 +67,7 @@ void mst(
     for(int i=0;i<nV;i++)
         T[i] = parent[i];
     //printMST(parent, nV, graph); 
+    delete[] parent;
+    delete[] key;
+    delete[] mstSet;
 }
