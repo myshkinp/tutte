@@ -4,6 +4,10 @@ project(matchmaker)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 add_compile_definitions(_USE_MATH_DEFINES)
 
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
+  string(APPEND CMAKE_CXX_FLAGS " -fpermissive -Wall -Wextra -Wconversion -Wsign-conversion -Wunused-parameter ")
+endif()
+
 set(THIRD_PARTY_DIR ${CMAKE_SOURCE_DIR}/ext)
 include(PEDependencies)
 
